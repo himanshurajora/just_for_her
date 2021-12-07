@@ -94,7 +94,7 @@ const App = () => {
       >
         <View style={styles.container}>
           <HeadingText text={'Just For Her 💖'} />
-          <TextInput style={styles.nameInput} placeholder='Enter Your Name'>
+          <TextInput style={styles.nameInput} placeholder='Enter Your Name' placeholderTextColor={"grey"}>
           </TextInput>
           <GetInButton onPress={() => { }}></GetInButton>
         </View>
@@ -125,8 +125,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     // backgroundColor: '#fff',
-    // color: '#333333',
-    // fontFamily: 'Beauty',
+    color: 'black'
   },
 
 });
