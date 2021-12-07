@@ -12,6 +12,8 @@ import React, { useState } from 'react';
 
 import {
   Button,
+  Image,
+  ImageBackground,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -53,7 +55,7 @@ const HeadingText = (props: { text: string }) => {
 };
 
 const GetInButton = (props: { onPress: () => void }) => {
-  
+
   return (
     <TouchableOpacity
       style={[
@@ -67,7 +69,7 @@ const GetInButton = (props: { onPress: () => void }) => {
       ]}
       onPress={props.onPress}
     >
-      <Text style={{ color: 'white', fontSize: 18, alignSelf:"center", fontWeight: '900' }}>
+      <Text style={{ color: 'white', fontSize: 18, alignSelf: "center", fontWeight: '900' }}>
         Get In
       </Text>
     </TouchableOpacity>
@@ -82,24 +84,32 @@ const App = () => {
   const [count, setcount] = useState(0);
   return (
     <SafeAreaView>
-      <View style={styles.container}>
-        <HeadingText text={'Just For You 💖'} />
-        <TextInput style={styles.nameInput} placeholder='Enter Your Name'>
-        
-        </TextInput>
-        <GetInButton onPress={()=>{}}></GetInButton>
-      </View>
-    </SafeAreaView>
+      <ImageBackground
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        resizeMode='cover'
+        source={require('./assets/images/bg-1.png')}
+      >
+        <View style={styles.container}>
+          <HeadingText text={'Just For Her 💖'} />
+          <TextInput style={styles.nameInput} placeholder='Enter Your Name'>
+          </TextInput>
+          <GetInButton onPress={() => { }}></GetInButton>
+        </View>
+      </ImageBackground>
+    </SafeAreaView >
   );
 };
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
     height: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
   },
   nameInput: {
     width: '80%',
@@ -114,7 +124,8 @@ const styles = StyleSheet.create({
     minHeight: 50,
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#fff'
+    // backgroundColor: '#fff',
+    // color: '#333333',
     // fontFamily: 'Beauty',
   },
 
