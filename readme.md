@@ -2,7 +2,7 @@
 
 <h3> My hands are shaking right now while I am writing about her. 
 <br>
-I don't know what I gonna write further but the only thing I know is that today I just want to write.
+I don't know what I am gonna write further but the only thing I know is that today I just want to write.
 
 <br>
 I have no guts to propose her, and I have no idea what to do. 😔
