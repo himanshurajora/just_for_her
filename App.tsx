@@ -9,7 +9,9 @@
  */
 
 import React, { useState } from 'react';
-
+import Home from './screens/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   Button,
   Image,
@@ -24,82 +26,25 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-
-const HeadingText = (props: { text: string }) => {
-  let colorScheme = useColorScheme();
-
-  return (
-    <Text style={
-      [
-        {
-          color: '#333333',
-          fontSize: 30,
-          alignSelf: 'center',
-          marginBottom: 20,
-          fontFamily: 'Beauty',
-        },
-      ]
-    }>
-      {props.text}
-    </Text>
-  );
-};
-
-const GetInButton = (props: { onPress: () => void }) => {
-
-  return (
-    <TouchableOpacity
-      style={[
-        {
-          backgroundColor: '#FF559D',
-          padding: 10,
-          borderRadius: 15,
-          margin: 20,
-          width: '50%',
-        }
-      ]}
-      onPress={props.onPress}
-    >
-      <Text style={{ color: 'white', fontSize: 18, alignSelf: "center", fontWeight: '900' }}>
-        Get In
-      </Text>
-    </TouchableOpacity>
-  );
-};
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Data from './screens/Data'
 
 
 
+const Stack = createNativeStackNavigator();
 const App = () => {
 
   const colorScheme = useColorScheme();
   const [count, setcount] = useState(0);
   return (
-    <SafeAreaView>
-      <ImageBackground
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-        resizeMode='cover'
-        source={require('./assets/images/bg-1.png')}
-      >
-        <View style={styles.container}>
-          <HeadingText text={'Just For Her 💖'} />
-          <TextInput style={styles.nameInput} placeholder='Enter Your Name' placeholderTextColor={"grey"}>
-          </TextInput>
-          <GetInButton onPress={() => { }}></GetInButton>
-        </View>
-      </ImageBackground>
-    </SafeAreaView >
+    <>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} options={{statusBarHidden: true, headerShown: false}}/>
+          <Stack.Screen name="Data" component={Data} options={{title: "Just For You", "headerStyle": [{backgroundColor: "#ff85a1"}], "headerBlurEffect": "prominent"}} />
+        </Stack.Navigator>  
+      </NavigationContainer>
+    </>
   );
 };
 
